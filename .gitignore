@@ -1,0 +1,10 @@
+# Build paths
+.gradle
+build
+out
+
+# IDE Specific files
+project-g.iml
+.idea
+.classpath
+.project

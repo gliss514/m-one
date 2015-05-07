@@ -1,0 +1,52 @@
+buildscript {
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:1.2.3.RELEASE")
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'spring-boot'
+apply plugin: 'war'
+
+jar {
+	baseName = 'project-g'
+	version = '$dev$'
+}
+
+repositories {
+	mavenCentral()
+}
+
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
+
+group 'com.mone'
+
+dependencies {
+	// tag::jetty[]
+	compile("org.springframework.boot:spring-boot-starter-web")
+//    compile("org.springframework.boot:spring-boot-starter-jetty")
+	// end::jetty[]
+//	compile "org.springframework.boot:spring-boot-starter-tomcat"
+	// tag::actuator[]
+	compile("org.springframework.boot:spring-boot-starter-actuator")
+	// end::actuator[]
+
+	compile("org.springframework.boot:spring-boot-starter-data-mongodb")
+	compile 'org.springframework.data:spring-data-mongodb:1.7.0.RELEASE'
+	compile 'org.apache.commons:commons-lang3:3.4'
+
+	compile 'org.apache.tomcat.embed:tomcat-embed-jasper:8.0.20'
+	compile 'jstl:jstl:1.2'
+
+	testCompile("junit:junit")
+}
+
+task wrapper(type: Wrapper) {
+	gradleVersion = '2.3'
+}

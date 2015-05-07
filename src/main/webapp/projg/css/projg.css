@@ -1,0 +1,22 @@
+div.glass {
+	padding: 1%;
+	border-radius: 12px;
+	border: 1px solid;
+	border-color: rgba(255, 255, 255, 0.2);
+	box-shadow: 0 5px 15px rgba(1, 1, 1, 0.3);
+}
+
+div.right-align {
+	padding-top : auto;
+	padding-right : 15px;
+	padding-bottom : auto;
+}
+
+a:hover {
+	cursor: hand !important;
+	text-decoration: none !important;
+}
+
+thead > tr > th {
+	background-color : #424242;	
+}
