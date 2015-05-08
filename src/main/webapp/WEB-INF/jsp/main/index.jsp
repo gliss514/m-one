@@ -8,16 +8,12 @@
 <!DOCTYPE html>
 <html>
 <gtag:scriptcss>
-<body>
-	<gtag:container>
-		<gtag:form modelAttribute="user" caption="Sign In">
-			<gtag:textinput name="username" label="label.username" mandatory="yes" placeholder="Username"></gtag:textinput>
-			<gtag:password name="password" label="label.password" mandatory="yes" placeholder="Password"></gtag:password>
-			<gtag:buttoncontainer>
-				<gtag:submit/>
-			</gtag:buttoncontainer>
-		</gtag:form>
-	</gtag:container>
-</body>
+	<body>
+		<gtag:navbar title="gres.navbar.title" items="${navbarItems}"/>
+		<div id="workspace"></div>
+		<div style="position:absolute; bottom:0;">
+			<font size="-2">&nbsp;&nbsp;Project G Version 1.0. Copyright (c) 2015, All Rights Reserved. e-mail : gliss0514@gmail.com</font>
+		</div>
+	</body>
 </gtag:scriptcss>
 </html>

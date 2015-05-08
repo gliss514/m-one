@@ -22,13 +22,13 @@ public class MainController {
 	@RequestMapping(value = "/index", method = RequestMethod.GET)
 	public ModelAndView index(@ModelAttribute("user") User user) {
 		ModelAndView modelView = new ModelAndView("main/index");
+		modelView.addObject("navbarItems", getNavbars());
 		return modelView;
 	}
 	
 	@RequestMapping(value = "/index", method = RequestMethod.POST)
 	public ModelAndView submit(@ModelAttribute("user") User user, BindingResult result, HttpServletRequest req) {
 		ModelAndView modelView = new ModelAndView("main/main");
-		System.out.println(user.getUsername());
 		modelView.addObject("navbarItems", getNavbars());
 		return modelView;
 	}
