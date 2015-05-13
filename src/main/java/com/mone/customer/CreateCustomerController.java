@@ -33,7 +33,7 @@ public class CreateCustomerController {
 		String page = "menu/createCustomer";
 		if (!result.hasErrors()) {
 			page = "redirect:searchCustomer.com.mone.g";
-			customerService.save(customer);
+			customerService.save((Customer)result.getTarget());
 		} else {
 			System.out.println(result.getAllErrors().get(0).getDefaultMessage());
 		}

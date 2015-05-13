@@ -11,9 +11,6 @@
 	<body>
 		<gtag:navbar title="gres.navbar.title" items="${navbarItems}"/>
 		<div id="workspace"></div>
-		<div style="position:absolute; bottom:0;">
-			<font size="-2">&nbsp;&nbsp;Project G Version 1.0. Copyright (c) 2015, All Rights Reserved. e-mail : gliss0514@gmail.com</font>
-		</div>
 	</body>
 </gtag:scriptcss>
 </html>

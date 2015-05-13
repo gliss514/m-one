@@ -36,6 +36,7 @@ public class UpdateCustomerController {
 	public ModelAndView post(@Valid @ModelAttribute("customer") Customer customer, BindingResult result) {
 		String page = "customer/updateCustomer";
 		if (!result.hasErrors()) {
+			customer = (Customer) result.getTarget();
 			Customer prevCustomer = customerService.findOne(customer.getId());
 			BeanUtils.copyProperties(customer, prevCustomer);
 			page = "redirect:searchCustomer.com.mone.g";

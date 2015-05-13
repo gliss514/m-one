@@ -10,6 +10,7 @@
 	<gtag:container>
 		<gtag:form modelAttribute="salesContract" caption="New Contract">
 			<gtag:select name="customerCode" label="label.name" mandatory="yes" items="${customerList}"></gtag:select>
+			<gtag:textinput name="totalLines" label="label.totalLines" mandatory="yes" placeholder="Total Lines"></gtag:textinput>
 			<gtag:datepicker name="dateFrom" label="label.dateFrom" mandatory="yes"></gtag:datepicker>
 			<gtag:datepicker name="dateTo" label="label.dateTo" mandatory="yes"></gtag:datepicker>
 			<gtag:buttoncontainer>

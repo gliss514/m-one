@@ -42,6 +42,7 @@ public class UpdateSalesContractController {
 	public ModelAndView post(@Valid @ModelAttribute("salesContract") SalesContract salesContract, BindingResult result) {
 		String page = "contract/updateSalesContract";
 		if (!result.hasErrors()) {
+			salesContract = (SalesContract) result.getTarget();
 			SalesContract prevContract = salesContractService.findOne(salesContract.getId());
 			BeanUtils.copyProperties(salesContract, prevContract);
 			Customer customer = customerService.findByCode(salesContract.getCustomerCode());

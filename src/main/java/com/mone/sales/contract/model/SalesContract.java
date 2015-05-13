@@ -1,13 +1,15 @@
 package com.mone.sales.contract.model;
 
+import java.util.Date;
+
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.format.annotation.DateTimeFormat;
+
 import com.mone.core.data.BaseObject;
 import com.mone.customer.model.Customer;
 
-import java.util.Date;
-
-public class SalesContract extends BaseObject {
+public class SalesContract extends BaseObject implements
+		Comparable<SalesContract> {
 
 	private static final long serialVersionUID = -1720556050639569387L;
 
@@ -25,10 +27,10 @@ public class SalesContract extends BaseObject {
 	private Date dateTo;
 
 	private String monthsRemaining;
-	
+
 	private String daysRemaining;
 
-	private String relatedDocuments;
+	private String totalLines;
 
 	public String getCustomerCode() {
 		return customerCode;
@@ -86,11 +88,22 @@ public class SalesContract extends BaseObject {
 		this.monthsRemaining = monthsRemaining;
 	}
 
-	public String getRelatedDocuments() {
-		return relatedDocuments;
+	public String getTotalLines() {
+		return totalLines;
 	}
 
-	public void setRelatedDocuments(String relatedDocuments) {
-		this.relatedDocuments = relatedDocuments;
+	public void setTotalLines(String totalLines) {
+		this.totalLines = totalLines;
 	}
+
+	@Override
+	public int compareTo(SalesContract o) {
+		if (Integer.valueOf(o.getDaysRemaining()) > Integer.valueOf(this.getDaysRemaining())) {
+			return 1;
+		} else if (Integer.valueOf(o.getDaysRemaining()) < Integer.valueOf(this.getDaysRemaining())) {
+			return -1;
+		} else
+			return 0;
+	}
+
 }

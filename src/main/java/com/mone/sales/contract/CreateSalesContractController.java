@@ -38,6 +38,7 @@ public class CreateSalesContractController {
 		String page = "contract/createSalesContract";
 		if (!result.hasErrors()) {
 			page = "redirect:searchSalesContract.com.mone.g";
+			salesContract = (SalesContract) result.getTarget();
 			Customer customer = customerService.findByCode(salesContract.getCustomerCode());
 			salesContract.setCustomer(customer);
 			salesContractService.save(salesContract);

@@ -22,9 +22,8 @@ public class CustomerService extends ProjGService<Customer>{
 		Map<String, String> customerMap = new HashMap<>();
 		
 		Iterable<Customer> customerIter = findAll();
-		customerMap.put("", "-- Select Customer --");
 		for(Customer cust : customerIter){
-			customerMap.put(cust.getCode(), cust.getName());
+			customerMap.put(cust.getName(), cust.getName());
 		}
 		return customerMap;
 	}
@@ -32,7 +31,6 @@ public class CustomerService extends ProjGService<Customer>{
 	public Map<String, String> getTypeList(){
 		Map<String, String> typeMap = new HashMap<>();
 		
-		typeMap.put("", "-- Select Type --");
 		typeMap.put("Consumer", "Consumer");
 		typeMap.put("SME", "SME");
 		return typeMap;

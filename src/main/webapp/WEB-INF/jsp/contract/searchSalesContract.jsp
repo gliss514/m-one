@@ -10,6 +10,7 @@
 			<tr>
 				<th>Company Name</th>
 				<th>Customer Name</th>
+				<th>Total Lines</th>
 				<th>Date From</th>
 				<th>Date To</th>
 				<th>Month(s) Remaining</th>
@@ -20,6 +21,7 @@
 				<tr>
 					<td>${salesContract.customer.companyName}</td>
 					<td>${salesContract.customer.name}</td>
+					<td>${salesContract.totalLines}</td>
 					<td><fmt:formatDate value="${salesContract.dateFrom}" pattern="dd/MM/yyyy" /></td>
 					<td><fmt:formatDate value="${salesContract.dateTo}" pattern="dd/MM/yyyy" /></td>
 					<td>${salesContract.monthsRemaining}</td>
