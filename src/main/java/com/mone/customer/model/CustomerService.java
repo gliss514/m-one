@@ -23,7 +23,7 @@ public class CustomerService extends ProjGService<Customer>{
 		
 		Iterable<Customer> customerIter = findAll();
 		for(Customer cust : customerIter){
-			customerMap.put(cust.getName(), cust.getName());
+			customerMap.put(cust.getCode(), cust.getName());
 		}
 		return customerMap;
 	}
